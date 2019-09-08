@@ -6,21 +6,59 @@
         xmlns:local="clr-namespace:Wormhole_Ranger"
         xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1024" WindowStyle="None">
+        Title="MainWindow" Height="420" Width="640" WindowStyle="None" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="180"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2" Background="#FF8522BD">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" >
-                <Button x:Name="ButtonPower" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPower_Click">
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0.04">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFC5C5C5" Offset="1"/>
+                    <GradientStop Color="#FFE0E0E0" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
+        <Grid x:Name="GridTitlebar" Grid.ColumnSpan="3" Background="#FF8522BD" MouseDown="GridTitlebar_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPinOff" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOff_Click">
+                    <MaterialDesign:PackIcon Kind="ToggleSwitchOff" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonPinOn" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOn_Click">
+                    <MaterialDesign:PackIcon Kind="ToggleSwitch" />
+                </Button>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,0">
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonMaximaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMaximaze_Click">
+                    <MaterialDesign:PackIcon Kind="WindowMaximize" />
+                </Button>
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonMinimaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimaze_Click">
+                    <MaterialDesign:PackIcon Kind="WindowMinimize" />
+                </Button>
+
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPower" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPower_Click">
                     <MaterialDesign:PackIcon Kind="Power" />
                 </Button>
+
             </StackPanel>
         </Grid>
     </Grid>

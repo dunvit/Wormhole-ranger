@@ -13,5 +13,6 @@ namespace Wormhole_Ranger
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }
