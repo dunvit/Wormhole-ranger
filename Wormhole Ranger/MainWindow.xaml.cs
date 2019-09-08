@@ -24,5 +24,10 @@ namespace Wormhole_Ranger
         {
             InitializeComponent();
         }
+
+        private void ButtonPower_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
