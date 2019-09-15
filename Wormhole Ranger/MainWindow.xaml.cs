@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using Dragablz;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using Wormhole_Ranger.Views;
 
 namespace Wormhole_Ranger
 {
@@ -13,6 +16,8 @@ namespace Wormhole_Ranger
             InitializeComponent();
 
             RefreshWindow();
+
+            
         }
 
         private void RefreshWindow()
@@ -54,9 +59,7 @@ namespace Wormhole_Ranger
                     ButtonPinOn.Visibility = Visibility.Visible;
                     Topmost = false;
                     break;
-
             }
-
         }
 
         private void ButtonPower_Click(object sender, RoutedEventArgs e)
@@ -83,7 +86,7 @@ namespace Wormhole_Ranger
             }
 
             DragMove();
-            ApplicationSettings.Window.ChangeLocation(new Point(Left, Top));
+            ApplicationSettings.Window.ChangeLocation(new System.Windows.Point(Left, Top));
         }
 
         private void ButtonMinimaze_Click(object sender, RoutedEventArgs e)
@@ -108,6 +111,26 @@ namespace Wormhole_Ranger
         {
             ApplicationSettings.Window.ChangePinState(true);
             RefreshWindow();
+        }
+
+        private void TabablzControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string tabName = ((sender as TabablzControl).SelectedItem as TabItem).Name as string;
+
+            switch (tabName)
+            {
+                case "Home":
+                    DataContext = new RedView();
+                    break;
+                case "Pilots":
+                    DataContext = new BlueView();
+                    break;
+                case "Browser":
+                    DataContext = new OrangeView();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
