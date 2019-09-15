@@ -6,7 +6,9 @@
              xmlns:local="clr-namespace:Wormhole_Ranger.Views"
              mc:Ignorable="d" 
              d:DesignHeight="420" d:DesignWidth="640">
-    <Grid Background="Orange">
-            
-    </Grid>
+    <Border BorderBrush="#565656"  Grid.ColumnSpan="3" BorderThickness="1">
+        <Grid Background="Orange">
+
+        </Grid>
+    </Border>
 </UserControl>

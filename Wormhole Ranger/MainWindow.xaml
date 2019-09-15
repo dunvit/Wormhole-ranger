@@ -32,61 +32,51 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="DimGray">
+        
+        <Grid Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="3" Background="#222222">
             <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="5" Content="{Binding}"/>
         </Grid>
 
+
         <Grid Grid.Row="1" Grid.ColumnSpan="3" Background="Honeydew">
             <dragablz:TabablzControl FixedHeaderCount="3" SelectionChanged="TabablzControl_SelectionChanged">
-                <TabItem Name="Home" Header="TAB RED" >
-                    <StackPanel Background="White" Height="500" Orientation="Vertical">
-                        <TextBlock FontSize="25" Padding="25" Foreground="#013284" FontWeight="ExtraBold" >Tab 1</TextBlock>
-                    </StackPanel>
-                </TabItem>
-                <TabItem Name="Pilots" Header="TAB BLUE">
-                    <StackPanel Background="White" Height="500" Orientation="Vertical">
-                        <TextBlock FontSize="25" Padding="25" Foreground="#013284" FontWeight="ExtraBold" >Tab 2</TextBlock>
-                    </StackPanel>
-                </TabItem>
-                <TabItem Name="Browser" Header="TAB ORANGE">
-                    <StackPanel Background="White" Height="500" Orientation="Vertical">
-                        <TextBlock FontSize="25" Padding="25" Foreground="DarkGreen" FontWeight="ExtraBold" >Tab 3</TextBlock>
-                    </StackPanel>
-                </TabItem>
+                <TabItem Name="Home" Header="TAB RED" />
+                <TabItem Name="Pilots" Header="TAB BLUE"/>
+                <TabItem Name="Browser" Header="TAB ORANGE"/>
             </dragablz:TabablzControl>
-
-            
         </Grid>
 
+        <Border BorderBrush="#565656"  Grid.ColumnSpan="3" BorderThickness="1">
+            <Grid x:Name="GridTitlebar" Grid.ColumnSpan="3" Background="#222222" MouseDown="GridTitlebar_MouseDown">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,0">
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPinOff" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOff_Click">
+                        <MaterialDesign:PackIcon Kind="ToggleSwitchOff" />
+                    </Button>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonPinOn" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOn_Click">
+                        <MaterialDesign:PackIcon Kind="ToggleSwitch" />
+                    </Button>
+                </StackPanel>
 
 
-        <Grid x:Name="GridTitlebar" Grid.ColumnSpan="3" Background="#FF8522BD" MouseDown="GridTitlebar_MouseDown">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5,0">
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPinOff" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOff_Click">
-                    <MaterialDesign:PackIcon Kind="ToggleSwitchOff" />
-                </Button>
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonPinOn" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPinOn_Click">
-                    <MaterialDesign:PackIcon Kind="ToggleSwitch" />
-                </Button>
-            </StackPanel>
 
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,0">
 
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonMaximaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMaximaze_Click">
+                        <MaterialDesign:PackIcon Kind="WindowMaximize" />
+                    </Button>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5,0">
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonMinimaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimaze_Click">
+                        <MaterialDesign:PackIcon Kind="WindowMinimize" />
+                    </Button>
 
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Visibility="Hidden" x:Name="ButtonMaximaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMaximaze_Click">
-                    <MaterialDesign:PackIcon Kind="WindowMaximize" />
-                </Button>
+                    <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPower" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPower_Click">
+                        <MaterialDesign:PackIcon Kind="Power" />
+                    </Button>
 
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonMinimaze" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonMinimaze_Click">
-                    <MaterialDesign:PackIcon Kind="WindowMinimize" />
-                </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
 
-                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" x:Name="ButtonPower" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="ButtonPower_Click">
-                    <MaterialDesign:PackIcon Kind="Power" />
-                </Button>
-
-            </StackPanel>
-        </Grid>
+        
     </Grid>
 </Window>

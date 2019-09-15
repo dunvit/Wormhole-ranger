@@ -20,7 +20,7 @@
                         -->
                     <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="Gold"/>
                     <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="Gold"/>
-                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="Black"/>
+                    <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#565656"/>
                     <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="{StaticResource Primary500Foreground}"/>
                     <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="{StaticResource Primary700}"/>
                     <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="{StaticResource Primary700Foreground}"/>
