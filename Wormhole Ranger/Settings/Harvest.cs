@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Wormhole_Ranger.ViewModels
+namespace Wormhole_Ranger.Settings
 {
-    class RedViewModel
+    class Harvest
     {
+        //public static 
     }
 }

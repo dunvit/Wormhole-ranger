@@ -11,8 +11,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="420" Width="640" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
-        <DataTemplate x:Name="redViewTemplate" DataType="{x:Type viewmodels:RedViewModel}">
-            <views:RedView DataContext="{Binding}"/>
+        <DataTemplate x:Name="redViewTemplate" DataType="{x:Type viewmodels:CharactersModel}">
+            <views:CharactersView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="blueViewTemplate" DataType="{x:Type viewmodels:BlueViewModel}">
             <views:BlueView DataContext="{Binding}"/>
@@ -40,7 +40,7 @@
 
         <Grid Grid.Row="1" Grid.ColumnSpan="3" Background="Honeydew">
             <dragablz:TabablzControl FixedHeaderCount="3" SelectionChanged="TabablzControl_SelectionChanged">
-                <TabItem Name="Home" Header="TAB RED" />
+                <TabItem Name="Control_Characters" Header="CHARACTERS" />
                 <TabItem Name="Pilots" Header="TAB BLUE"/>
                 <TabItem Name="Browser" Header="TAB ORANGE"/>
             </dragablz:TabablzControl>

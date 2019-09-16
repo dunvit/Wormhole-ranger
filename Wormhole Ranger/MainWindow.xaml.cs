@@ -16,8 +16,6 @@ namespace Wormhole_Ranger
             InitializeComponent();
 
             RefreshWindow();
-
-            
         }
 
         private void RefreshWindow()
@@ -119,14 +117,14 @@ namespace Wormhole_Ranger
 
             switch (tabName)
             {
-                case "Home":
-                    DataContext = new RedView();
+                case "Control_Characters":
+                    DataContext = ModulesControls.ModuleCharacters;
                     break;
                 case "Pilots":
-                    DataContext = new BlueView();
+                    DataContext = ModulesControls.ModuleBlueView;
                     break;
                 case "Browser":
-                    DataContext = new OrangeView();
+                    DataContext = ModulesControls.ModuleOrangeView;
                     break;
                 default:
                     break;
