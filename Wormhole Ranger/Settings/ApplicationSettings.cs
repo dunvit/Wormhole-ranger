@@ -51,11 +51,11 @@ namespace Wormhole_Ranger
 
             LanguageId = jsonResponse.LanguageId == null ? 0 : jsonResponse.LanguageId;
 
-            Authorization.Authorization_ClientId = jsonResponse.Authorization_ClientId;
-            Authorization.Authorization_ClientSecret = jsonResponse.Authorization_ClientSecret;
-            Authorization.Authorization_ClientState = jsonResponse.Authorization_ClientState;
-            Authorization.Authorization_Port = jsonResponse.Authorization_Port;
-            Authorization.Authorization_Scopes = jsonResponse.Authorization_Scopes;
+            Authorization.ClientId = jsonResponse.Authorization_ClientId;
+            Authorization.ClientSecret = jsonResponse.Authorization_ClientSecret;
+            Authorization.ClientState = jsonResponse.Authorization_ClientState;
+            Authorization.Port = jsonResponse.Authorization_Port;
+            Authorization.Scopes = jsonResponse.Authorization_Scopes;
 
             SignaturePatterns.Gas = jsonResponse.SignaturePatternGas == null ? "Gas %ABC-%123 %NAME (%ET)" : jsonResponse.SignaturePatternGas;
             SignaturePatterns.Data = jsonResponse.SignaturePatternData == null ? "Data %ABC-%123 %NAME (%ET)" : jsonResponse.SignaturePatternData;
@@ -78,11 +78,11 @@ namespace Wormhole_Ranger
 
         private static void LoadFromDefaultValues()
         {
-            Authorization.Authorization_ClientId = "e136434f8a0c484ab802666f378cac09";
-            Authorization.Authorization_ClientSecret = "bqbIMfDvaFfI9EPOGYmrVDeih9wPkDFnH3eW7GZY";
-            Authorization.Authorization_ClientState = "bqbIMfDvaFfI9EPOGYmrVDeih9wPkDFnH3eW7GZY";
-            Authorization.Authorization_Port = "8080";
-            Authorization.Authorization_Scopes = "esi-location.read_location.v1 esi-location.read_ship_type.v1 esi-bookmarks.read_character_bookmarks.v1 esi-fleets.read_fleet.v1 esi-ui.open_window.v1 esi-ui.write_waypoint.v1";
+            Authorization.ClientId = "e136434f8a0c484ab802666f378cac09";
+            Authorization.ClientSecret = "bqbIMfDvaFfI9EPOGYmrVDeih9wPkDFnH3eW7GZY";
+            Authorization.ClientState = "bqbIMfDvaFfI9EPOGYmrVDeih9wPkDFnH3eW7GZY";
+            Authorization.Port = "8080";
+            Authorization.Scopes = "esi-location.read_location.v1 esi-location.read_ship_type.v1 esi-bookmarks.read_character_bookmarks.v1 esi-fleets.read_fleet.v1 esi-ui.open_window.v1 esi-ui.write_waypoint.v1";
 
             SignaturePatterns.Gas = "Gas %ABC-%123 %NAME (%ET)";
             SignaturePatterns.Data = "Data %ABC-%123 %NAME (%ET)";

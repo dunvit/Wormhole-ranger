@@ -1,8 +1,10 @@
 ﻿using Dragablz;
+using log4net;
+using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Wormhole_Ranger.Views;
 
 namespace Wormhole_Ranger
 {
@@ -14,6 +16,9 @@ namespace Wormhole_Ranger
         public MainWindow()
         {
             InitializeComponent();
+
+            var logRepository = LogManager.GetRepository(Assembly.GetEntryAssembly());
+            log4net.Config.XmlConfigurator.Configure(logRepository, new FileInfo(@"Configurations\Logs.config"));
 
             RefreshWindow();
         }

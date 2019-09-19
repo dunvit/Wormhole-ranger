@@ -52,6 +52,8 @@ namespace Wormhole_Ranger.Views
 
                     var currentPilot = new Character {Id = pilot.Id, Name = pilot.Name, Token = pilot.Token };
 
+                    pilot.ReInitialization();
+
                     pilots.Add(currentPilot);
                 }
                 catch (Exception ex)
