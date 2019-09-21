@@ -50,9 +50,7 @@ namespace Wormhole_Ranger.Views
                 {
                     SetText(string.Format(Localization.Messages.Get("StartAuthorizePilot"), pilot.Name));
 
-                    var currentPilot = new Character {Id = pilot.Id, Name = pilot.Name, Token = pilot.Token };
-
-                    pilot.ReInitialization();
+                    var currentPilot = new Character(pilot.Id, pilot.Token) {Token = pilot.Token };
 
                     pilots.Add(currentPilot);
                 }
